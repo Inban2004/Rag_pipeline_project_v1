@@ -1,0 +1,32 @@
+.section {
+  padding: var(--spacing-4xl) var(--spacing-lg);
+  background: var(--white);
+}
+
+.container {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.title {
+  margin-bottom: var(--spacing-md);
+}
+
+.subtitle {
+  margin: 0 auto var(--spacing-2xl);
+}
+
+.buttons {
+  display: flex;
+  gap: var(--spacing-md);
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 480px) {
+  .buttons {
+    flex-direction: column;
+    align-items: center;
+  }
+}

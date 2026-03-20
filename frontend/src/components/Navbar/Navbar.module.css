@@ -1,0 +1,148 @@
+.navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  height: var(--navbar-height);
+  display: flex;
+  align-items: center;
+  transition: all var(--transition-base);
+  background: transparent;
+}
+
+.scrolled {
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(12px);
+  box-shadow: var(--shadow-sm);
+}
+
+.container {
+  max-width: var(--container-max);
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 var(--spacing-lg);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: var(--white);
+  transition: color var(--transition-base);
+}
+
+.scrolled .logo {
+  color: var(--primary);
+}
+
+.logoAccent {
+  color: var(--secondary);
+}
+
+.nav {
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.navLink {
+  font-size: 0.9375rem;
+  font-weight: 500;
+  color: rgba(255, 255, 255, 0.85);
+  transition: color var(--transition-fast);
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-family);
+}
+
+.scrolled .navLink {
+  color: var(--text-light);
+}
+
+.navLink:hover {
+  color: var(--white);
+}
+
+.scrolled .navLink:hover {
+  color: var(--primary);
+}
+
+.ctaBtn {
+  padding: 10px 24px;
+  font-size: 0.875rem;
+  border-radius: var(--radius-sm);
+}
+
+.mobileToggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: var(--spacing-sm);
+}
+
+.hamburger {
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  position: relative;
+  transition: all var(--transition-fast);
+}
+
+.scrolled .hamburger,
+.scrolled .hamburger::before,
+.scrolled .hamburger::after {
+  background: var(--text);
+}
+
+.hamburger::before,
+.hamburger::after {
+  content: '';
+  position: absolute;
+  width: 24px;
+  height: 2px;
+  background: var(--white);
+  left: 0;
+  transition: all var(--transition-fast);
+}
+
+.hamburger::before { top: -7px; }
+.hamburger::after { top: 7px; }
+
+.mobileNav {
+  display: none;
+  position: fixed;
+  top: var(--navbar-height);
+  left: 0;
+  right: 0;
+  background: var(--white);
+  padding: var(--spacing-lg);
+  flex-direction: column;
+  gap: var(--spacing-md);
+  box-shadow: var(--shadow-lg);
+}
+
+.mobileNav.open {
+  display: flex;
+}
+
+.mobileNavLink {
+  font-size: 1rem;
+  font-weight: 500;
+  color: var(--text);
+  padding: var(--spacing-sm) 0;
+  cursor: pointer;
+  background: none;
+  border: none;
+  font-family: var(--font-family);
+  text-align: left;
+}
+
+@media (max-width: 768px) {
+  .nav { display: none; }
+  .mobileToggle { display: block; }
+}
